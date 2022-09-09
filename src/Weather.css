@@ -1,0 +1,24 @@
+.row {
+  display: flex;
+}
+
+.col {
+  flex: 50%;
+}
+
+.col-left {
+  display: flex;
+}
+
+form {
+  margin-bottom: 10px;
+  display: flex;
+}
+
+input {
+  padding: 5px 15px;
+}
+
+.search-form {
+  flex: 1 1 auto;
+}
