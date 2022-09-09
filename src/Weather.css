@@ -1,13 +1,47 @@
 .row {
   display: flex;
+  align-items: center;
+  margin-top: 15px;
 }
 
 .col {
   flex: 50%;
+  align-items: center;
 }
 
 .col-left {
   display: flex;
+}
+
+.col-left p {
+  font-size: 48px;
+  color: #202124;
+  display: flex;
+  padding-left: 16px;
+}
+
+.col-left p span {
+  align-self: flex-start;
+  padding-top: 6px;
+}
+
+.col-left .units {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+h1 {
+  color: #202124;
+  font-size: 22px;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+.Weather > ul {
+  margin-top: 10px;
+  color: #70757a;
+  font-size: 16px;
+  line-height: 20px;
 }
 
 form {
