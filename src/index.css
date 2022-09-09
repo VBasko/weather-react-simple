@@ -23,11 +23,15 @@ ul {
 }
 
 .container {
-  max-width: 800px;
+  max-width: 600px;
   margin: 0 auto;
   border: 1px solid #ebebeb;
   border-radius: 10px;
   padding: 20px;
+}
+
+.container > ul {
+  text-transform: capitalize;
 }
 
 footer {

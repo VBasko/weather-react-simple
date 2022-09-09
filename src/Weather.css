@@ -4,13 +4,21 @@
   margin-top: 15px;
 }
 
+@media (max-width: 375px) {
+  .row {
+    flex-wrap: wrap;
+  }
+}
+
 .col {
   flex: 50%;
   align-items: center;
+  margin-bottom: 15px;
 }
 
 .col-left {
   display: flex;
+  margin-right: 20px;
 }
 
 .col-left p {
