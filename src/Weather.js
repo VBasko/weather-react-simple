@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
-import FormattedDate from "./FormattedDate";
+import WeatherInfo from "./WeatherInfo";
 
 function Weather(props) {
+  const [city, setCity] = useState(props.defaultCity);
   const [weatherData, setWeatherData] = useState({ ready: false });
 
   function handleResponse(response) {
@@ -19,39 +20,28 @@ function Weather(props) {
     });
   }
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    console.log("Submited");
+  }
+
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
+
   if (weatherData.ready) {
     return (
       <div className="Weather container">
-        <form>
+        <form onSubmit={handleSubmit}>
           <input
             type="search"
             placeholder="Enter a city..."
             className="search-form"
+            onChange={handleCityChange}
           />
           <input type="submit" value="Search" className="search-btn" />
         </form>
-        <h1>{weatherData.city}</h1>
-        <ul>
-          <li>
-            <FormattedDate date={weatherData.date} />
-          </li>
-          <li>{weatherData.description}</li>
-        </ul>
-        <div className="row">
-          <div className="col col-left">
-            <img src={weatherData.iconUrl} alt={weatherData.description} />
-            <p>
-              {Math.round(weatherData.temperature)}{" "}
-              <span className="units">°C</span>{" "}
-            </p>
-          </div>
-          <div className="col">
-            <ul>
-              <li>Humidity: {weatherData.humidity}%</li>
-              <li>Wind: {weatherData.wind} m/s</li>
-            </ul>
-          </div>
-        </div>
+        <WeatherInfo data={weatherData} />
       </div>
     );
   } else {
