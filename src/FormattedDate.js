@@ -1,7 +1,6 @@
 import React from "react";
 
 function FormattedDate(props) {
-  console.log(props.date);
   let day = new Intl.DateTimeFormat("en-US", { weekday: "long" }).format(
     props.date
   );

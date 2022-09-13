@@ -102,7 +102,7 @@ a.disabled {
   color: #202124;
   transition: all 500ms ease;
   cursor: pointer;
-  min-width: 85px;
+  min-width: 95px;
 }
 
 .forecast-day.active,

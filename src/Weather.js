@@ -18,6 +18,8 @@ function Weather(props) {
       humidity: response.data.main.humidity,
       icon: response.data.weather[0].icon,
       date: new Date(response.data.dt * 1000),
+      latitude: response.data.coord.lat,
+      longitude: response.data.coord.lon,
     });
   }
 
@@ -49,7 +51,10 @@ function Weather(props) {
           <input type="submit" value="Search" className="search-btn" />
         </form>
         <WeatherInfo data={weatherData} />
-        <WeatherForecast />
+        <WeatherForecast
+          latitude={weatherData.latitude}
+          longitude={weatherData.longitude}
+        />
       </div>
     );
   } else {
