@@ -20,7 +20,7 @@ function WeatherForecastDay(props) {
 
   return (
     <div>
-      <div className="forecast-day active">
+      <div className="forecast-day">
         <div>{day()}</div>
         <div className="icon">
           <WeatherIcon code={props.forecast.weather[0].icon} />

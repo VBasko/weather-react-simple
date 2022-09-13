@@ -14,15 +14,15 @@ function WeatherForecast(props) {
   if (loaded) {
     return (
       <div className="WeatherForecast">
-        <WeatherForecastDay forecast={forecast[0]} />
-        <WeatherForecastDay forecast={forecast[1]} />
-        <WeatherForecastDay forecast={forecast[2]} />
-        <WeatherForecastDay forecast={forecast[3]} />
-        <WeatherForecastDay forecast={forecast[4]} />
+        {forecast.map(function (dailyForecast, index) {
+          if (index < 5) {
+            return <WeatherForecastDay forecast={dailyForecast} key={index} />;
+          }
+        })}
       </div>
     );
   } else {
-    let apiKey = "4c6e3574ee40805d6cf2ed08e07f518d";
+    let apiKey = "49b631c45785fe73d2a88477803dea22";
     let latitude = props.latitude;
     let longitude = props.longitude;
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;

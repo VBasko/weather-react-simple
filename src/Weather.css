@@ -90,7 +90,12 @@ a.disabled {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   column-gap: 20px;
-  overflow-x: scroll;
+}
+
+@media (max-width: 630px) {
+  .WeatherForecast {
+    overflow-x: scroll;
+  }
 }
 
 .forecast-day {
